@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSPersonasCygnus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSPersonasCygnus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSPersonasCygnus">
+      <s:element name="WC_CREAR_PERSONABASICO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_tipodepersona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_n_tipoiden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_d_fecexp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_n_ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_direcelec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CREAR_PERSONABASICOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CREAR_PERSONABASICOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CREAR_ROLPERSONAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_codigoPer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numRol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CREAR_ROLPERSONASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CREAR_ROLPERSONASResult" type="tns:RespuestaCrea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCrea">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Resultado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodigoCygnus" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="General">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:element name="WC_CREAR_PERSONAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_tipodepersona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_codaso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_tipcli" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_n_tipoiden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_lugexp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_d_fecexp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_ciunac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_d_fecnac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_cbs_nat_res_aux" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_d_fecres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_s_tesoro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_estciv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nat_percar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_cla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_claint" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_nroact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_df_nat_rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_df_cod_of" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nacionalidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_nacionalidad2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfn_NroHijos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_apellido1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_dfs_nat_apellido2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_cmb_Estrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_cb_nat_mujer_fam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_cb_operacion_ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_n_ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_w_s_direcelec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_i_vinculac_lab" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_c_asesor_com" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_n_salario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_i_nivel_estudio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_i_profesion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_i_cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_i_tipo_cont" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_n_modeloScoring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CREAR_PERSONASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CREAR_PERSONASResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WC_CREAR_PERSONABASICOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_PERSONABASICO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CREAR_PERSONABASICOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_PERSONABASICOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CREAR_ROLPERSONASSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_ROLPERSONAS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CREAR_ROLPERSONASSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_ROLPERSONASResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CREAR_PERSONASSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_PERSONAS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CREAR_PERSONASSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CREAR_PERSONASResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSPersonasCygnusSoap">
+    <wsdl:operation name="WC_CREAR_PERSONABASICO">
+      <wsdl:input message="tns:WC_CREAR_PERSONABASICOSoapIn" />
+      <wsdl:output message="tns:WC_CREAR_PERSONABASICOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_ROLPERSONAS">
+      <wsdl:input message="tns:WC_CREAR_ROLPERSONASSoapIn" />
+      <wsdl:output message="tns:WC_CREAR_ROLPERSONASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_PERSONAS">
+      <wsdl:input message="tns:WC_CREAR_PERSONASSoapIn" />
+      <wsdl:output message="tns:WC_CREAR_PERSONASSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSPersonasCygnusSoap" type="tns:WSPersonasCygnusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CREAR_PERSONABASICO">
+      <soap:operation soapAction="WSPersonasCygnus/WC_CREAR_PERSONABASICO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_ROLPERSONAS">
+      <soap:operation soapAction="WSPersonasCygnus/WC_CREAR_ROLPERSONAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_PERSONAS">
+      <soap:operation soapAction="WSPersonasCygnus/WC_CREAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSPersonasCygnusSoap12" type="tns:WSPersonasCygnusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CREAR_PERSONABASICO">
+      <soap12:operation soapAction="WSPersonasCygnus/WC_CREAR_PERSONABASICO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_ROLPERSONAS">
+      <soap12:operation soapAction="WSPersonasCygnus/WC_CREAR_ROLPERSONAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CREAR_PERSONAS">
+      <soap12:operation soapAction="WSPersonasCygnus/WC_CREAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSPersonasCygnus">
+    <wsdl:port name="WSPersonasCygnusSoap" binding="tns:WSPersonasCygnusSoap">
+      <soap:address location="http://10.10.30.35/WSPersonasCygnus/WSPersonasCygnus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSPersonasCygnusSoap12" binding="tns:WSPersonasCygnusSoap12">
+      <soap12:address location="http://10.10.30.35/WSPersonasCygnus/WSPersonasCygnus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

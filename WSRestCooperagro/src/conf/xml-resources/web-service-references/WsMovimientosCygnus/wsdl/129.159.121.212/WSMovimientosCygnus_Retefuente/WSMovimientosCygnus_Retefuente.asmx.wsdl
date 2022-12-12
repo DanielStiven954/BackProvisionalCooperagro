@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSMovimientosCygnus_retefuente" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSMovimientosCygnus_retefuente" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSMovimientosCygnus_retefuente">
+      <s:element name="retefuente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_fin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_base" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retefuenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retefuenteResult" type="tns:RespuestaCert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCert">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_Liquidacion" type="tns:ArrayOfLiquidacionCert" />
+              <s:element minOccurs="0" maxOccurs="1" name="Int_Liquidacion" type="tns:ArrayOfInteresesCert" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aportes_Liq" type="tns:ArrayOfAportesCert" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="General">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="AportesCert">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="s_linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_saldo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="InteresesCert">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="s_linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_saldo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_atributo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_num_radic" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LiquidacionCert">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="s_linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_saldo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_num_radic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_monto_inicial" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLiquidacionCert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LiquidacionCert" nillable="true" type="tns:LiquidacionCert" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInteresesCert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InteresesCert" nillable="true" type="tns:InteresesCert" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAportesCert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AportesCert" nillable="true" type="tns:AportesCert" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="retefuente_coopedac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_fin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_base" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retefuente_coopedacResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retefuente_coopedacResult" type="tns:RespuestaCert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="retefuenteSoapIn">
+    <wsdl:part name="parameters" element="tns:retefuente" />
+  </wsdl:message>
+  <wsdl:message name="retefuenteSoapOut">
+    <wsdl:part name="parameters" element="tns:retefuenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="retefuente_coopedacSoapIn">
+    <wsdl:part name="parameters" element="tns:retefuente_coopedac" />
+  </wsdl:message>
+  <wsdl:message name="retefuente_coopedacSoapOut">
+    <wsdl:part name="parameters" element="tns:retefuente_coopedacResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSMovimientosCygnus_RetefuenteSoap">
+    <wsdl:operation name="retefuente">
+      <wsdl:input message="tns:retefuenteSoapIn" />
+      <wsdl:output message="tns:retefuenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retefuente_coopedac">
+      <wsdl:input message="tns:retefuente_coopedacSoapIn" />
+      <wsdl:output message="tns:retefuente_coopedacSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSMovimientosCygnus_RetefuenteSoap" type="tns:WSMovimientosCygnus_RetefuenteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retefuente">
+      <soap:operation soapAction="WSMovimientosCygnus_retefuente/retefuente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retefuente_coopedac">
+      <soap:operation soapAction="WSMovimientosCygnus_retefuente/retefuente_coopedac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSMovimientosCygnus_RetefuenteSoap12" type="tns:WSMovimientosCygnus_RetefuenteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retefuente">
+      <soap12:operation soapAction="WSMovimientosCygnus_retefuente/retefuente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retefuente_coopedac">
+      <soap12:operation soapAction="WSMovimientosCygnus_retefuente/retefuente_coopedac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSMovimientosCygnus_Retefuente">
+    <wsdl:port name="WSMovimientosCygnus_RetefuenteSoap" binding="tns:WSMovimientosCygnus_RetefuenteSoap">
+      <soap:address location="http://129.159.121.212/WSMovimientosCygnus_Retefuente/WSMovimientosCygnus_Retefuente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSMovimientosCygnus_RetefuenteSoap12" binding="tns:WSMovimientosCygnus_RetefuenteSoap12">
+      <soap12:address location="http://129.159.121.212/WSMovimientosCygnus_Retefuente/WSMovimientosCygnus_Retefuente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

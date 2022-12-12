@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ebssas.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ebssas.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services de constantes para COOPERAGRO</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ebssas.com/">
+      <s:element name="WS_TIPOS_IDENTIFICACION_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPOS_IDENTIFICACION_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_IDENTIFICACION_IResult" type="tns:ResponseTiposIdent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTiposIdent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstTiposIdent" type="tns:ArrayOfTipoIdentificacionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTipoIdentificacionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoIdentificacionDTO" nillable="true" type="tns:TipoIdentificacionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoIdentificacionDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICodigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPOS_IDENTIFICACION_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPOS_IDENTIFICACION_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_IDENTIFICACION_IIResult" type="tns:ResponseTiposIdent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPOS_NIV_ESTUDIO_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPOS_NIV_ESTUDIO_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_NIV_ESTUDIO_IResult" type="tns:ResponseNivelesEstudio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseNivelesEstudio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listTipoNivEstudio" type="tns:ArrayOfTipoNivelesEstudioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTipoNivelesEstudioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoNivelesEstudioDTO" nillable="true" type="tns:TipoNivelesEstudioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoNivelesEstudioDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICodigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPOS_NIV_ESTUDIO_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPOS_NIV_ESTUDIO_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_NIV_ESTUDIO_IIResult" type="tns:ResponseNivelesEstudio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPOS_ACT_ECONOMICA_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPOS_ACT_ECONOMICA_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_ACT_ECONOMICA_IResult" type="tns:ResponseActividadEconomica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseActividadEconomica">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listActEcon" type="tns:ArrayOfActividadEconomicaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfActividadEconomicaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActividadEconomicaDTO" nillable="true" type="tns:ActividadEconomicaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActividadEconomicaDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICodigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPOS_ACT_ECONOMICA_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPOS_ACT_ECONOMICA_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPOS_ACT_ECONOMICA_IIResult" type="tns:ResponseActividadEconomica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_CONTRATO_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPO_CONTRATO_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_CONTRATO_IResult" type="tns:ResponseTipoContrato" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTipoContrato">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listTipoContr" type="tns:ArrayOfTipoContratoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTipoContratoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoContratoDTO" nillable="true" type="tns:TipoContratoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoContratoDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICodigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPO_CONTRATO_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_CONTRATO_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_CONTRATO_IIResult" type="tns:ResponseTipoContrato" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_ESTADO_CIVIL_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPO_ESTADO_CIVIL_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_ESTADO_CIVIL_IResult" type="tns:ResponseTipoEstadoCivil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTipoEstadoCivil">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listEstCivil" type="tns:ArrayOfTipoEstadoCivilDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTipoEstadoCivilDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoEstadoCivilDTO" nillable="true" type="tns:TipoEstadoCivilDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoEstadoCivilDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPO_ESTADO_CIVIL_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_ESTADO_CIVIL_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_ESTADO_CIVIL_IIResult" type="tns:ResponseTipoEstadoCivil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_FORMA_PAGO_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_TIPO_FORMA_PAGO_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_FORMA_PAGO_IResult" type="tns:ResponseTipoPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseTipoPago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listTiposPago" type="tns:ArrayOfTipoPagoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTipoPagoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoPagoDTO" nillable="true" type="tns:TipoPagoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoPagoDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICodigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_TIPO_FORMA_PAGO_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TIPO_FORMA_PAGO_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TIPO_FORMA_PAGO_IIResult" type="tns:ResponseTipoPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CIUDAD_I">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_CIUDAD_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CIUDAD_IResult" type="tns:ResponseCiudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseCiudad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsjConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="listCiudades" type="tns:ArrayOfCiudadDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCiudadDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CiudadDTO" nillable="true" type="tns:CiudadDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CiudadDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ind_Nal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ind_Internal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ubicacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CIUDAD_II">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_nivel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ind_nal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ind_internal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ubicacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CIUDAD_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CIUDAD_IIResult" type="tns:ResponseCiudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_TIPOS_IDENTIFICACION_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_IDENTIFICACION_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_IDENTIFICACION_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_IDENTIFICACION_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_IDENTIFICACION_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_IDENTIFICACION_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_IDENTIFICACION_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_IDENTIFICACION_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_NIV_ESTUDIO_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_NIV_ESTUDIO_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_NIV_ESTUDIO_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_NIV_ESTUDIO_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_NIV_ESTUDIO_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_NIV_ESTUDIO_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_NIV_ESTUDIO_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_NIV_ESTUDIO_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_ACT_ECONOMICA_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_ACT_ECONOMICA_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_ACT_ECONOMICA_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_ACT_ECONOMICA_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_ACT_ECONOMICA_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_ACT_ECONOMICA_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPOS_ACT_ECONOMICA_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPOS_ACT_ECONOMICA_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_CONTRATO_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_CONTRATO_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_CONTRATO_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_CONTRATO_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_CONTRATO_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_CONTRATO_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_CONTRATO_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_CONTRATO_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_ESTADO_CIVIL_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_ESTADO_CIVIL_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_ESTADO_CIVIL_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_ESTADO_CIVIL_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_ESTADO_CIVIL_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_ESTADO_CIVIL_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_ESTADO_CIVIL_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_ESTADO_CIVIL_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_FORMA_PAGO_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_FORMA_PAGO_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_FORMA_PAGO_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_FORMA_PAGO_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_FORMA_PAGO_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_FORMA_PAGO_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_TIPO_FORMA_PAGO_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TIPO_FORMA_PAGO_IIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CIUDAD_ISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CIUDAD_I" />
+  </wsdl:message>
+  <wsdl:message name="WS_CIUDAD_ISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CIUDAD_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CIUDAD_IISoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CIUDAD_II" />
+  </wsdl:message>
+  <wsdl:message name="WS_CIUDAD_IISoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CIUDAD_IIResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSAdminCooperagroSoap">
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de identificación</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_IDENTIFICACION_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_IDENTIFICACION_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de identificación por codigo</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_IDENTIFICACION_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_IDENTIFICACION_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de niveles de estudio</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_NIV_ESTUDIO_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_NIV_ESTUDIO_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de niveles de estudio por codigo</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_NIV_ESTUDIO_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_NIV_ESTUDIO_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de actividades economicas</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_ACT_ECONOMICA_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_ACT_ECONOMICA_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de actividades economicas por Codigo</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPOS_ACT_ECONOMICA_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPOS_ACT_ECONOMICA_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de contrato</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_CONTRATO_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_CONTRATO_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de contrato</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_CONTRATO_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_CONTRATO_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de estado civil</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_ESTADO_CIVIL_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_ESTADO_CIVIL_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta los estados civiles por codigo</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_ESTADO_CIVIL_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_ESTADO_CIVIL_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de forma de pago</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_FORMA_PAGO_ISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_FORMA_PAGO_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de tipos de forma de pago por codigo</wsdl:documentation>
+      <wsdl:input message="tns:WS_TIPO_FORMA_PAGO_IISoapIn" />
+      <wsdl:output message="tns:WS_TIPO_FORMA_PAGO_IISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de las ciudades</wsdl:documentation>
+      <wsdl:input message="tns:WS_CIUDAD_ISoapIn" />
+      <wsdl:output message="tns:WS_CIUDAD_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_II">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta el listado de las ciudades por filtros</wsdl:documentation>
+      <wsdl:input message="tns:WS_CIUDAD_IISoapIn" />
+      <wsdl:output message="tns:WS_CIUDAD_IISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSAdminCooperagroSoap" type="tns:WSAdminCooperagroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_IDENTIFICACION_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_IDENTIFICACION_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_NIV_ESTUDIO_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_NIV_ESTUDIO_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_ACT_ECONOMICA_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPOS_ACT_ECONOMICA_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_CONTRATO_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_CONTRATO_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_ESTADO_CIVIL_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_ESTADO_CIVIL_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_I">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_FORMA_PAGO_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_II">
+      <soap:operation soapAction="http://ebssas.com/WS_TIPO_FORMA_PAGO_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_I">
+      <soap:operation soapAction="http://ebssas.com/WS_CIUDAD_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_II">
+      <soap:operation soapAction="http://ebssas.com/WS_CIUDAD_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSAdminCooperagroSoap12" type="tns:WSAdminCooperagroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_IDENTIFICACION_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_IDENTIFICACION_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_IDENTIFICACION_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_NIV_ESTUDIO_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_NIV_ESTUDIO_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_NIV_ESTUDIO_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_ACT_ECONOMICA_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPOS_ACT_ECONOMICA_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPOS_ACT_ECONOMICA_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_CONTRATO_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_CONTRATO_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_CONTRATO_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_ESTADO_CIVIL_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_ESTADO_CIVIL_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_ESTADO_CIVIL_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_FORMA_PAGO_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TIPO_FORMA_PAGO_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_TIPO_FORMA_PAGO_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_I">
+      <soap12:operation soapAction="http://ebssas.com/WS_CIUDAD_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CIUDAD_II">
+      <soap12:operation soapAction="http://ebssas.com/WS_CIUDAD_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSAdminCooperagro">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services de constantes para COOPERAGRO</wsdl:documentation>
+    <wsdl:port name="WSAdminCooperagroSoap" binding="tns:WSAdminCooperagroSoap">
+      <soap:address location="http://10.10.30.93/WSAdministracionCooperagro/WSClientAdministracion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSAdminCooperagroSoap12" binding="tns:WSAdminCooperagroSoap12">
+      <soap12:address location="http://10.10.30.93/WSAdministracionCooperagro/WSClientAdministracion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

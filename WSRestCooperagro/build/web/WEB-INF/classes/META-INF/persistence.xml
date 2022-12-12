@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="WSRestCooperagroPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.co.ebs.cooperagro.domain.Persona</class>
+    <class>com.co.ebs.cooperagro.domain.Usuario</class>
+    <class>com.co.ebs.cooperagro.domain.Acceso</class>
+    <class>com.co.ebs.cooperagro.domain.PreguntaCreaUsu</class>
+    <class>com.co.ebs.cooperagro.domain.AccesoUsuario</class>
+    <class>com.co.ebs.cooperagro.domain.CwTipoAcceso</class>
+    <class>com.co.ebs.cooperagro.domain.AccesoUsuarioExterno</class>
+    <class>com.co.ebs.cooperagro.domain.Parametros</class>
+    <class>com.co.ebs.cooperagro.domain.ClaveAccesoUsuarioExterno</class>
+    <class>com.co.ebs.cooperagro.domain.Transaccion</class>
+    <class>com.co.ebs.cooperagro.domain.TipoDato</class>
+    <class>com.co.ebs.cooperagro.domain.NotificacionUsuario</class>
+    <class>com.co.ebs.cooperagro.domain.Evento</class>
+    <class>com.co.ebs.cooperagro.domain.TiposImagenesPortal</class>
+    <class>com.co.ebs.cooperagro.domain.Origen</class>
+    <class>com.co.ebs.cooperagro.domain.TipoCanal</class>
+    <class>com.co.ebs.cooperagro.domain.TipoPerfil</class>
+    <class>com.co.ebs.cooperagro.domain.TipoTransaccion</class>
+    <class>com.co.ebs.cooperagro.domain.TipoEvento</class>
+    <class>com.co.ebs.cooperagro.domain.PerfilTransaccional</class>
+    <class>com.co.ebs.cooperagro.domain.SessionUsuario</class>
+    <class>com.co.ebs.cooperagro.domain.ImagenesPortal</class>
+    <class>com.co.ebs.cooperagro.domain.PreguntaUsuario</class>
+    <class>com.co.ebs.cooperagro.domain.GrupoNotificacion</class>
+    <class>com.co.ebs.cooperagro.domain.Pregunta</class>
+    <class>com.co.ebs.cooperagro.domain.AuditoriaClave</class>
+    <class>com.co.ebs.cooperagro.domain.SolicitudAfiliacionWeb</class>
+    <class>com.co.ebs.cooperagro.domain.TipoEstadoSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.OperMonedaExtSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.DocumentoSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.ActEconomicaSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.ReferenciaSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.InfoPensionadoSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.TipoRequisitoSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.RevSegSarlaftSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.InfoConyugeSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.DatoPersonalSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.HistoriaSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.ReferenciasSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.TipoEstadoSolCredito</class>
+    <class>com.co.ebs.cooperagro.domain.TipoRequisitoSolCred</class>
+    <class>com.co.ebs.cooperagro.domain.SolicitudCredito</class>
+    <class>com.co.ebs.cooperagro.domain.HistoriaSolicitudCredito</class>
+    <class>com.co.ebs.cooperagro.domain.DocumentosSolicitudCredito</class>
+    <class>com.co.ebs.cooperagro.domain.DocumentoSolicitudCredito</class>
+    <class>com.co.ebs.cooperagro.domain.InfoCodeudor</class>
+    <class>com.co.ebs.cooperagro.domain.TipoEstadoSolicitudCredito</class>
+    <class>com.co.ebs.cooperagro.domain.TipoProductoSolCredito</class>
+    <class>com.co.ebs.cooperagro.domain.GestionPqrsf</class>
+    <class>com.co.ebs.cooperagro.domain.TipoEstadoPqrsf</class>
+    <class>com.co.ebs.cooperagro.domain.HistoriaPqrsf</class>
+    <class>com.co.ebs.cooperagro.domain.TipoPqrsf</class>
+    <class>com.co.ebs.cooperagro.domain.Pqrsf</class>
+    <class>com.co.ebs.cooperagro.domain.EstadoCedula</class>
+    <class>com.co.ebs.cooperagro.domain.ConsultaAniOlimpiait</class>
+    <class>com.co.ebs.cooperagro.domain.TipoAutorizacionSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.TipoCuentaSolAfilWeb</class>
+    <class>com.co.ebs.cooperagro.domain.FotoPerfil</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <!--Produccion-->
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/XE"/>
+            <property name="javax.persistence.jdbc.user" value="CYGNUSWEB"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="ethos"/>-->
+      <!--Pruebas-->
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//10.10.30.94:1521/COOPAGROWEB"/>
+      <property name="javax.persistence.jdbc.user" value="CYGNUSWEB"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.password" value="ethos"/>-->
+      
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//10.0.0.138:1521/COOPERAGROWEBPDB.subnet02180656.vcn02180656.oraclevcn.com"/>
+      <property name="javax.persistence.jdbc.user" value="CYGNUSWEB"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.password" value="sysadm"/>-->
+      
+      <!-- En Anydesk:  -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/XE"/>
+            <property name="javax.persistence.jdbc.user" value="CYGNUSWEB"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="ethos"/>
+    </properties>
+  </persistence-unit>
+</persistence>

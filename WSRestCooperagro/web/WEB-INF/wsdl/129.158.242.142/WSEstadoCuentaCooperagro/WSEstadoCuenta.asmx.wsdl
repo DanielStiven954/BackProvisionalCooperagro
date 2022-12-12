@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSEstadoCuenta" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSEstadoCuenta" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSEstadoCuenta">
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAISERVICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAISERVICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_ESTADOCUENTAISERVICEResult" type="tns:DatosDato1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosDato1">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ArrayOfDatoDTO" type="tns:ArrayOfDatoDTO1" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="datoDTO1">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Cupo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fechapago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Valorpago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Radicado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Saldocapital" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatoDTO1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTO1" nillable="true" type="tns:datoDTO1" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_EXTRACTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_EXTRACTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_EXTRACTOResult" type="tns:Datosdato3" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Datosdato3">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ArrayOfDato3DTO" type="tns:ArrayOfDato3DTO" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDato3DTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dato3DTO" nillable="true" type="tns:dato3DTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dato3DTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Num_radicado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fecha_aprob" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Linea_cred" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Monto_aprob" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Cuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Saldo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fecha_prox_pag" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Altura_cuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tasa_cred" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Plazo_cred" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_CREDITOS_TERMINADOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_CREDITOS_TERMINADOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_CREDITOS_TERMINADOSResult" type="tns:DatosDato" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosDato">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ArrayOfDatoDTO" type="tns:ArrayOfDatoDTO" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTO" nillable="true" type="tns:datoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Cupo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaUltPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Radicado" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_OBTENER_DETALLE_MOVIMIENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xnum_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cod_operation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_OBTENER_DETALLE_MOVIMIENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_OBTENER_DETALLE_MOVIMIENTOResult" type="tns:Datosdetallemov" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Datosdetallemov">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LstMovimientoss" type="tns:ArrayOfDetallemov" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetallemov">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="detallemov" nillable="true" type="tns:detallemov" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="detallemov">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Concepto" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sNumRadic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOResult" type="tns:Datosamparados" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Datosamparados">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DetalleAmparadoBenef" type="tns:ArrayOfAmparados" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAmparados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="amparados" nillable="true" type="tns:amparados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="amparados">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CNumRadic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CIdentificacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CNombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CApellidos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DPorc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DValor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BRtaConsulta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SMjs" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAIISERVICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xnum_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAIISERVICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_ESTADOCUENTAIISERVICEResult" type="tns:DatosDato2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosDato2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LstMovimientos" type="tns:ArrayOfDatoDTO2" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatoDTO2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTO2" nillable="true" type="tns:datoDTO2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTO2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Concepto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Saldo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoTran" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_MOVIMIENTOS_FECHA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xnum_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_MOVIMIENTOS_FECHAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_MOVIMIENTOS_FECHAResult" type="tns:DatosLstMovimien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosLstMovimien">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Movimiento" type="tns:ArrayOfLstMovimientos" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLstMovimientos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LstMovimientos" nillable="true" type="tns:LstMovimientos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LstMovimientos">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Saldocapital" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Concepto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoTran" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SNomAtributo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAIIISERVICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xnum_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_ESTADOCUENTAIIISERVICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_ESTADOCUENTAIIISERVICEResult" type="tns:DatosDatoIII" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosDatoIII">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ArrayOfDato2DTO" type="tns:ArrayOfDatoDTOIII" />
+              <s:element minOccurs="0" maxOccurs="1" name="ArrayOfDato2DTOO" type="tns:ArrayOfDatoDTOIII2" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatoDTOIII">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTOIII" nillable="true" type="tns:datoDTOIII" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTOIII">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltPag" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FecApertura" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FecVencimiento" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatoDTOIII2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTOIII2" nillable="true" type="tns:datoDTOIII2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTOIII2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Monto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Plazo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FechaUltPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_OBTENER_DETALLE_CUENTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sNumRadic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_OBTENER_DETALLE_CUENTAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_OBTENER_DETALLE_CUENTAResult" type="tns:DatosDetalleCta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosDetalleCta">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DetalleCta" type="tns:ArrayOfDetallecta" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetallecta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Detallecta" nillable="true" type="tns:Detallecta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Detallecta">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="INumRadic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SCodCredi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SNombreLinea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ICodDesti" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SMontoSol" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DPlazo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SValorCuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SEstadoo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaUltPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SEstado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IPeriodicidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SDescPeriodicidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IFormaPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SDescFormaPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CNumAporte" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaApertura" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaVencimiento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaUltMovimiento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SCuotaApo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SValorSaldoCap" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaProxPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IPerPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SDescPerPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CDescAporte" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IEstado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITipoTasa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ITipoHis" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DTasaInt" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DDesvTasa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IModalidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ICalcTasa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IPerInt" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ICuotaPag" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SFechaSolicitud" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BRtaConsulta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SMjs" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAISERVICESoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAISERVICE" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAISERVICESoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAISERVICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_EXTRACTOSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_EXTRACTO" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_EXTRACTOSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_EXTRACTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_CREDITOS_TERMINADOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_CREDITOS_TERMINADOS" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_CREDITOS_TERMINADOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_CREDITOS_TERMINADOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_OBTENER_DETALLE_MOVIMIENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_OBTENER_DETALLE_MOVIMIENTO" />
+  </wsdl:message>
+  <wsdl:message name="WS_OBTENER_DETALLE_MOVIMIENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_OBTENER_DETALLE_MOVIMIENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAIISERVICESoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAIISERVICE" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAIISERVICESoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAIISERVICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_MOVIMIENTOS_FECHASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_MOVIMIENTOS_FECHA" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_MOVIMIENTOS_FECHASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_MOVIMIENTOS_FECHAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAIIISERVICESoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAIIISERVICE" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ESTADOCUENTAIIISERVICESoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ESTADOCUENTAIIISERVICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_OBTENER_DETALLE_CUENTASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_OBTENER_DETALLE_CUENTA" />
+  </wsdl:message>
+  <wsdl:message name="WS_OBTENER_DETALLE_CUENTASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_OBTENER_DETALLE_CUENTAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSEstadoCuentaSoap">
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAISERVICE">
+      <wsdl:input message="tns:WS_CONSULTAR_ESTADOCUENTAISERVICESoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_ESTADOCUENTAISERVICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_EXTRACTO">
+      <wsdl:input message="tns:WS_CONSULTAR_EXTRACTOSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_EXTRACTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_CREDITOS_TERMINADOS">
+      <wsdl:input message="tns:WS_CONSULTAR_CREDITOS_TERMINADOSSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_CREDITOS_TERMINADOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_MOVIMIENTO">
+      <wsdl:input message="tns:WS_OBTENER_DETALLE_MOVIMIENTOSoapIn" />
+      <wsdl:output message="tns:WS_OBTENER_DETALLE_MOVIMIENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO">
+      <wsdl:input message="tns:WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <wsdl:input message="tns:WS_CONSULTAR_ESTADOCUENTAIISERVICESoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_ESTADOCUENTAIISERVICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_MOVIMIENTOS_FECHA">
+      <wsdl:input message="tns:WS_CONSULTAR_MOVIMIENTOS_FECHASoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_MOVIMIENTOS_FECHASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIIISERVICE">
+      <wsdl:input message="tns:WS_CONSULTAR_ESTADOCUENTAIIISERVICESoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_ESTADOCUENTAIIISERVICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_CUENTA">
+      <wsdl:input message="tns:WS_OBTENER_DETALLE_CUENTASoapIn" />
+      <wsdl:output message="tns:WS_OBTENER_DETALLE_CUENTASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSEstadoCuentaSoap" type="tns:WSEstadoCuentaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAISERVICE">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAISERVICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_EXTRACTO">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_EXTRACTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_CREDITOS_TERMINADOS">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_CREDITOS_TERMINADOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_MOVIMIENTO">
+      <soap:operation soapAction="WSEstadoCuenta/WS_OBTENER_DETALLE_MOVIMIENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAIISERVICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_MOVIMIENTOS_FECHA">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_MOVIMIENTOS_FECHA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIIISERVICE">
+      <soap:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAIIISERVICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_CUENTA">
+      <soap:operation soapAction="WSEstadoCuenta/WS_OBTENER_DETALLE_CUENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSEstadoCuentaSoap12" type="tns:WSEstadoCuentaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAISERVICE">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAISERVICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_EXTRACTO">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_EXTRACTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_CREDITOS_TERMINADOS">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_CREDITOS_TERMINADOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_MOVIMIENTO">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_OBTENER_DETALLE_MOVIMIENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_DATOS_AMPARADOS_BENEFICIARIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAIISERVICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_MOVIMIENTOS_FECHA">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_MOVIMIENTOS_FECHA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ESTADOCUENTAIIISERVICE">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_CONSULTAR_ESTADOCUENTAIIISERVICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_OBTENER_DETALLE_CUENTA">
+      <soap12:operation soapAction="WSEstadoCuenta/WS_OBTENER_DETALLE_CUENTA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSEstadoCuenta">
+    <wsdl:port name="WSEstadoCuentaSoap" binding="tns:WSEstadoCuentaSoap">
+      <soap:address location="http://129.158.242.142/WSEstadoCuentaCooperagro/WSEstadoCuenta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSEstadoCuentaSoap12" binding="tns:WSEstadoCuentaSoap12">
+      <soap12:address location="http://129.158.242.142/WSEstadoCuentaCooperagro/WSEstadoCuenta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

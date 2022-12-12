@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WC_CONSULTAR_PRODUCTOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PRODUCTOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PRODUCTOSResult" type="tns:ArrayOfDatoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDatoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTO" nillable="true" type="tns:datoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Num_cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_DOMINIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xc_sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_param" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_val_param" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_DOMINIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_DOMINIOResult" type="tns:ArrayOfDominioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDominioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dominioDTO" nillable="true" type="tns:dominioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dominioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_parametros" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_WEBREGISTROFORMULARIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xdata" type="tns:ArrayOfWebregistroformularioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWebregistroformularioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="webregistroformularioDTO" nillable="true" type="tns:webregistroformularioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="webregistroformularioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Formulario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nur_Web" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tabla_Db" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Campo_Bd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Valor_Registro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Orden" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_WEBREGISTROFORMULARIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_WEBREGISTROFORMULARIOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_SQL_COLECTION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xc_sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_SQL_COLECTIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_SQL_COLECTIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WC_CONSULTAR_PRODUCTOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PRODUCTOS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PRODUCTOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PRODUCTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_DOMINIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_DOMINIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_DOMINIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_DOMINIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBREGISTROFORMULARIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBREGISTROFORMULARIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBREGISTROFORMULARIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBREGISTROFORMULARIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_SQL_COLECTIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_SQL_COLECTION" />
+  </wsdl:message>
+  <wsdl:message name="WC_SQL_COLECTIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_SQL_COLECTIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSClientAdministracionSoap">
+    <wsdl:operation name="WC_CONSULTAR_PRODUCTOS">
+      <wsdl:input message="tns:WC_CONSULTAR_PRODUCTOSSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PRODUCTOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DOMINIO">
+      <wsdl:input message="tns:WC_CONSULTAR_DOMINIOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_DOMINIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBREGISTROFORMULARIO">
+      <wsdl:input message="tns:WC_OPERTATIVO_WEBREGISTROFORMULARIOSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_WEBREGISTROFORMULARIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_SQL_COLECTION">
+      <wsdl:input message="tns:WC_SQL_COLECTIONSoapIn" />
+      <wsdl:output message="tns:WC_SQL_COLECTIONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSClientAdministracionSoap" type="tns:WSClientAdministracionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CONSULTAR_PRODUCTOS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PRODUCTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DOMINIO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_DOMINIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBREGISTROFORMULARIO">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBREGISTROFORMULARIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_SQL_COLECTION">
+      <soap:operation soapAction="http://tempuri.org/WC_SQL_COLECTION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSClientAdministracionSoap12" type="tns:WSClientAdministracionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CONSULTAR_PRODUCTOS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PRODUCTOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DOMINIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_DOMINIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBREGISTROFORMULARIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBREGISTROFORMULARIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_SQL_COLECTION">
+      <soap12:operation soapAction="http://tempuri.org/WC_SQL_COLECTION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSClientAdministracion">
+    <wsdl:port name="WSClientAdministracionSoap" binding="tns:WSClientAdministracionSoap">
+      <soap:address location="http://localhost:81/WSAdministracionCooperagro/WSClientAdministracion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSClientAdministracionSoap12" binding="tns:WSClientAdministracionSoap12">
+      <soap12:address location="http://localhost:81/WSAdministracionCooperagro/WSClientAdministracion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

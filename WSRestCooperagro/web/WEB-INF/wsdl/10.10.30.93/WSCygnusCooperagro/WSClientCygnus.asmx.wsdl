@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ebssas.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.ebssas.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicios web para uso de Cooperagro</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ebssas.com/">
+      <s:element name="WS_CONSULTAR_PERSONAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_PERSONASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_PERSONASResult" type="tns:ArrayOfPersonasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="personasDTO" nillable="true" type="tns:personasDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="personasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Exp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Codigo_Asoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Exp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Retencion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_Distrib" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Forma_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Dia_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Vinculac_Lab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_E_Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Clave_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Ingreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Ing_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Oficina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Sistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Acto_Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Act_Ec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Asesor_Com" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Numveccod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Numactadm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado_Act" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Nacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado_Civil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_Salario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nivel_Estudio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Profesion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cargo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Dependencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pagaduria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Per_Car" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Residente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Res" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Resid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Aficion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cont" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tratamiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nickname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Razon_Soc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sigla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Icn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Acto_Creac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Cre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Sector" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Sociedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Objeto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Acto_Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Acto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sector_Pub" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nro_Empleados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Registro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Sueldo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Fundacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Vigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Fondo_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pais_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pais_Seg_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Hijos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Frec_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Salario_Liquido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Salario_Embar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Otros_Ing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Desc_Otros_Ing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Proposito_Afi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ori_Fon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Prom_Transac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Nomb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Salario_Neto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellido_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellido_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pagaduria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MujerFam" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_operf_ext" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="B_resultado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_mjs" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_PREGSEGURIDADALEATORIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_campo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_PREGSEGURIDADALEATORIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_PREGSEGURIDADALEATORIOResult" type="tns:ArrayOfPregseguridadaleatorioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPregseguridadaleatorioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pregseguridadaleatorioDTO" nillable="true" type="tns:pregseguridadaleatorioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pregseguridadaleatorioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Campo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_PREGSEGURIDADPER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_campo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_PREGSEGURIDADPERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_PREGSEGURIDADPERResult" type="tns:ArrayOfPregseguridadperDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPregseguridadperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pregseguridadperDTO" nillable="true" type="tns:pregseguridadperDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pregseguridadperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Campo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_GET_INDICADOR_VINCULACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_VINCULACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_GET_INDICADOR_VINCULACIONResult" type="tns:ResponseIndicadores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseIndicadores">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BRta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMsj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstIndicadorCartera" type="tns:ArrayOfIndicadorCarteraDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstIndicadorColocacion" type="tns:ArrayOfIndicadorColocacionDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstIndicadorVinculacion" type="tns:ArrayOfIndicadorVinculacionDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstIndicadorRetiro" type="tns:ArrayOfIndicadorRetiroDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIndicadorCarteraDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndicadorCarteraDTO" nillable="true" type="tns:IndicadorCarteraDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IndicadorCarteraDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DSuma" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ICountCartera" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIndicadorColocacionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndicadorColocacionDTO" nillable="true" type="tns:IndicadorColocacionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IndicadorColocacionDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DSuma" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ICountColocacion" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SCodCredi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIndicadorVinculacionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndicadorVinculacionDTO" nillable="true" type="tns:IndicadorVinculacionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IndicadorVinculacionDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICountVinculacion" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SAsesor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIndicadorRetiroDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndicadorRetiroDTO" nillable="true" type="tns:IndicadorRetiroDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IndicadorRetiroDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ICountRetiro" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMotivoRetiro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_GET_INDICADOR_RETIRO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_RETIROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_GET_INDICADOR_RETIROResult" type="tns:ResponseIndicadores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_CARTERA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaCorte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_CARTERAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_GET_INDICADOR_CARTERAResult" type="tns:ResponseIndicadores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_COLOCACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xsFechaFin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_GET_INDICADOR_COLOCACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_GET_INDICADOR_COLOCACIONResult" type="tns:ResponseIndicadores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_CONSULTAR_PERSONASSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PERSONAS" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PERSONASSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PERSONASResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PREGSEGURIDADALEATORIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PREGSEGURIDADALEATORIO" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PREGSEGURIDADALEATORIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PREGSEGURIDADALEATORIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PREGSEGURIDADPERSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PREGSEGURIDADPER" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PREGSEGURIDADPERSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PREGSEGURIDADPERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_VINCULACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_VINCULACION" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_VINCULACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_VINCULACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_RETIROSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_RETIRO" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_RETIROSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_RETIROResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_CARTERASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_CARTERA" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_CARTERASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_CARTERAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_COLOCACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_COLOCACION" />
+  </wsdl:message>
+  <wsdl:message name="WS_GET_INDICADOR_COLOCACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_GET_INDICADOR_COLOCACIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSCygnusCooperagroSoap">
+    <wsdl:operation name="WS_CONSULTAR_PERSONAS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta de persona.</wsdl:documentation>
+      <wsdl:input message="tns:WS_CONSULTAR_PERSONASSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_PERSONASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta preguntas aleatorias para registro.</wsdl:documentation>
+      <wsdl:input message="tns:WS_CONSULTAR_PREGSEGURIDADALEATORIOSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_PREGSEGURIDADALEATORIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADPER">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta pregunta para registro.</wsdl:documentation>
+      <wsdl:input message="tns:WS_CONSULTAR_PREGSEGURIDADPERSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_PREGSEGURIDADPERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_VINCULACION">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el indicador de vinculación de asociados en un rango de tiempo.</wsdl:documentation>
+      <wsdl:input message="tns:WS_GET_INDICADOR_VINCULACIONSoapIn" />
+      <wsdl:output message="tns:WS_GET_INDICADOR_VINCULACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_RETIRO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el indicador de retiro asociados por rango de tiempo.</wsdl:documentation>
+      <wsdl:input message="tns:WS_GET_INDICADOR_RETIROSoapIn" />
+      <wsdl:output message="tns:WS_GET_INDICADOR_RETIROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_CARTERA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el indicador de cartera por un rango de tiempo.</wsdl:documentation>
+      <wsdl:input message="tns:WS_GET_INDICADOR_CARTERASoapIn" />
+      <wsdl:output message="tns:WS_GET_INDICADOR_CARTERASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_COLOCACION">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el indicador de colocacion por un rango de tiempo.</wsdl:documentation>
+      <wsdl:input message="tns:WS_GET_INDICADOR_COLOCACIONSoapIn" />
+      <wsdl:output message="tns:WS_GET_INDICADOR_COLOCACIONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSCygnusCooperagroSoap" type="tns:WSCygnusCooperagroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTAR_PERSONAS">
+      <soap:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <soap:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PREGSEGURIDADALEATORIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADPER">
+      <soap:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PREGSEGURIDADPER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_VINCULACION">
+      <soap:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_VINCULACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_RETIRO">
+      <soap:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_RETIRO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_CARTERA">
+      <soap:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_CARTERA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_COLOCACION">
+      <soap:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_COLOCACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSCygnusCooperagroSoap12" type="tns:WSCygnusCooperagroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTAR_PERSONAS">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PREGSEGURIDADALEATORIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PREGSEGURIDADPER">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_CONSULTAR_PREGSEGURIDADPER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_VINCULACION">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_VINCULACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_RETIRO">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_RETIRO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_CARTERA">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_CARTERA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GET_INDICADOR_COLOCACION">
+      <soap12:operation soapAction="http://www.ebssas.com/WS_GET_INDICADOR_COLOCACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSCygnusCooperagro">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicios web para uso de Cooperagro</wsdl:documentation>
+    <wsdl:port name="WSCygnusCooperagroSoap" binding="tns:WSCygnusCooperagroSoap">
+      <soap:address location="http://10.10.30.93/WSCygnusCooperagro/WSClientCygnus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSCygnusCooperagroSoap12" binding="tns:WSCygnusCooperagroSoap12">
+      <soap12:address location="http://10.10.30.93/WSCygnusCooperagro/WSClientCygnus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

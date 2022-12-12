@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSSimuladorCredito" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSSimuladorCredito" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSSimuladorCredito">
+      <s:element name="WS_CONSULTA_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_monto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_nro_cuotas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fecha_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_recog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_forma_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTA_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTA_LIQUIDACIONResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_Liquidacion" type="tns:ArrayOfLiquidacion" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_Val_cuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_tasa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_ValorCuotaAsociado" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="General">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="n_plazo_maximo" type="tns:SalDecimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="df_edad" type="tns:SalDecimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="SalDecimal">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNull" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Liquidacion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="n_num_cuo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="f_fecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_sal_ini" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_capital" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_10" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_cap_tf" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_tf" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_total" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_sal_fin" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLiquidacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Liquidacion" nillable="true" type="tns:Liquidacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CREA_CREDITO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_monto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_nro_cuotas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fecha_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_recog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_forma_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_num_solicitud" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_estado_credito" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_estado_solicitud" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CREA_CREDITOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CREA_CREDITOResult" type="tns:RespuestaCrea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCrea">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_numRadic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_numDesti" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_Val_cuota" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_regPagareCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numRadic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numCuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numPagare" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_valorPagare" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fechaCuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_autorizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_aprobacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_porcComision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_valorComision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_semestre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_regPagareCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_regPagareCreditoResult" type="tns:RespuestaRegistro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaRegistro">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_codeudorCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_num_radic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_codeudorCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_codeudorCreditoResult" type="tns:RespuestaCrea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_regChequeCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numRadic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numCuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_CodBanco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numCheque" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_valorCheque" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fechaCuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numCta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_entidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_autorizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_girador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_aprobacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_porcComision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_valorComision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_semestre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_regChequeCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_regChequeCreditoResult" type="tns:RespuestaRegistro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTA_VALPRIMERACUOTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_num_radic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_desti" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_desem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fecha_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTA_VALPRIMERACUOTAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTA_VALPRIMERACUOTAResult" type="tns:Respuesta_cuotas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta_cuotas">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_Liquidacion" type="tns:ArrayOfLiquidacion_cuotas" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLiquidacion_cuotas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Liquidacion_cuotas" nillable="true" type="tns:Liquidacion_cuotas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Liquidacion_cuotas">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="n_num_cuo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="f_fecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="s_atributos" type="tns:ArrayOfAtributos_cuotas" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAtributos_cuotas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Atributos_cuotas" nillable="true" type="tns:Atributos_cuotas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Atributos_cuotas">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="n_cod_atr" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_nom_atr" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_valor" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_CONSULTA_LIQUIDACIONATR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_monto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_nro_cuotas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fecha_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_recog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_forma_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_val_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fec_tf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTA_LIQUIDACIONATRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTA_LIQUIDACIONATRResult" type="tns:RespuestaAtr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaAtr">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_Liquidacion" type="tns:ArrayOfLiquidacionAtr" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_Val_cuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_tasa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_ValorCuotaAsociado" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLiquidacionAtr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LiquidacionAtr" nillable="true" type="tns:LiquidacionAtr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LiquidacionAtr">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:General">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="n_num_cuo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="f_fecha" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_sal_ini" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_capital" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_10" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_cap_tf" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_int_tf" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_total" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_sal_fin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="n_intnom_10" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WS_RadicadoPagareCheque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_numDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_RadicadoPagareChequeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_RadicadoPagareChequeResult" type="tns:RespuestaRegistro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculoCupos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculoCuposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="calculoCuposResult" type="tns:RespuestaCupo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCupo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_monto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_plazo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_cupo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_tfijos" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_CONSULTA_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTA_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CREA_CREDITOSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CREA_CREDITO" />
+  </wsdl:message>
+  <wsdl:message name="WS_CREA_CREDITOSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CREA_CREDITOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_regPagareCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_regPagareCredito" />
+  </wsdl:message>
+  <wsdl:message name="WS_regPagareCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_regPagareCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_codeudorCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_codeudorCredito" />
+  </wsdl:message>
+  <wsdl:message name="WS_codeudorCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_codeudorCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_regChequeCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_regChequeCredito" />
+  </wsdl:message>
+  <wsdl:message name="WS_regChequeCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_regChequeCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTA_VALPRIMERACUOTASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_VALPRIMERACUOTA" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTA_VALPRIMERACUOTASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_VALPRIMERACUOTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTA_LIQUIDACIONATRSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_LIQUIDACIONATR" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTA_LIQUIDACIONATRSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTA_LIQUIDACIONATRResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_RadicadoPagareChequeSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_RadicadoPagareCheque" />
+  </wsdl:message>
+  <wsdl:message name="WS_RadicadoPagareChequeSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_RadicadoPagareChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="calculoCuposSoapIn">
+    <wsdl:part name="parameters" element="tns:calculoCupos" />
+  </wsdl:message>
+  <wsdl:message name="calculoCuposSoapOut">
+    <wsdl:part name="parameters" element="tns:calculoCuposResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSClientSimuladorCreditoSoap">
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACION">
+      <wsdl:input message="tns:WS_CONSULTA_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTA_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CREA_CREDITO">
+      <wsdl:input message="tns:WS_CREA_CREDITOSoapIn" />
+      <wsdl:output message="tns:WS_CREA_CREDITOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_regPagareCredito">
+      <wsdl:input message="tns:WS_regPagareCreditoSoapIn" />
+      <wsdl:output message="tns:WS_regPagareCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_codeudorCredito">
+      <wsdl:input message="tns:WS_codeudorCreditoSoapIn" />
+      <wsdl:output message="tns:WS_codeudorCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_regChequeCredito">
+      <wsdl:input message="tns:WS_regChequeCreditoSoapIn" />
+      <wsdl:output message="tns:WS_regChequeCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_VALPRIMERACUOTA">
+      <wsdl:input message="tns:WS_CONSULTA_VALPRIMERACUOTASoapIn" />
+      <wsdl:output message="tns:WS_CONSULTA_VALPRIMERACUOTASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACIONATR">
+      <wsdl:input message="tns:WS_CONSULTA_LIQUIDACIONATRSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTA_LIQUIDACIONATRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_RadicadoPagareCheque">
+      <wsdl:input message="tns:WS_RadicadoPagareChequeSoapIn" />
+      <wsdl:output message="tns:WS_RadicadoPagareChequeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="calculoCupos">
+      <wsdl:input message="tns:calculoCuposSoapIn" />
+      <wsdl:output message="tns:calculoCuposSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSClientSimuladorCreditoSoap" type="tns:WSClientSimuladorCreditoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACION">
+      <soap:operation soapAction="WSSimuladorCredito/WS_CONSULTA_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CREA_CREDITO">
+      <soap:operation soapAction="WSSimuladorCredito/WS_CREA_CREDITO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_regPagareCredito">
+      <soap:operation soapAction="WSSimuladorCredito/WS_regPagareCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_codeudorCredito">
+      <soap:operation soapAction="WSSimuladorCredito/WS_codeudorCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_regChequeCredito">
+      <soap:operation soapAction="WSSimuladorCredito/WS_regChequeCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_VALPRIMERACUOTA">
+      <soap:operation soapAction="WSSimuladorCredito/WS_CONSULTA_VALPRIMERACUOTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACIONATR">
+      <soap:operation soapAction="WSSimuladorCredito/WS_CONSULTA_LIQUIDACIONATR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_RadicadoPagareCheque">
+      <soap:operation soapAction="WSSimuladorCredito/WS_RadicadoPagareCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculoCupos">
+      <soap:operation soapAction="WSSimuladorCredito/calculoCupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSClientSimuladorCreditoSoap12" type="tns:WSClientSimuladorCreditoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACION">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_CONSULTA_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CREA_CREDITO">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_CREA_CREDITO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_regPagareCredito">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_regPagareCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_codeudorCredito">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_codeudorCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_regChequeCredito">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_regChequeCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_VALPRIMERACUOTA">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_CONSULTA_VALPRIMERACUOTA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTA_LIQUIDACIONATR">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_CONSULTA_LIQUIDACIONATR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_RadicadoPagareCheque">
+      <soap12:operation soapAction="WSSimuladorCredito/WS_RadicadoPagareCheque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculoCupos">
+      <soap12:operation soapAction="WSSimuladorCredito/calculoCupos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSClientSimuladorCredito">
+    <wsdl:port name="WSClientSimuladorCreditoSoap" binding="tns:WSClientSimuladorCreditoSoap">
+      <soap:address location="http://150.136.110.105/WSSimuladorCreditoCooperagro/WSClientSimuladorCredito.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSClientSimuladorCreditoSoap12" binding="tns:WSClientSimuladorCreditoSoap12">
+      <soap12:address location="http://150.136.110.105/WSSimuladorCreditoCooperagro/WSClientSimuladorCredito.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
